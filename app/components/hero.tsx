@@ -13,18 +13,17 @@ function Preview() {
 
   return (
     <div className="w-full h-full min-h-[500px] flex flex-col relative font-azeretMono bg-pink-50">
-         <p className="pt-4 text-base sm:text-xl md:text-2xl text-pink-800 w-full text-center">
-       i'm
-      </p>
-      <div className="pt-20 text-6xl sm:text-7xl md:text-8xl text-pink-900 w-full text-center font-calendas italic">
-        Fatima Nazir
-      </div>
-      <p className="pt-4 text-base sm:text-xl md:text-2xl text-pink-800 w-full text-center">
-       i'm
+        
+     <p className="pt-20 text-base sm:text-xl md:text-2xl text-pink-800 w-full text-center">
+        i'm
       </p>
       
+      <div className="pt-2 text-6xl sm:text-7xl md:text-8xl text-pink-900 w-full text-center font-calendas italic">
+        Fatima Nazir
+      </div>
+      
       {/* Download CV Button */}
-      <div className="absolute top-8 right-8 z-10">
+      <div className="flex justify-center mt-6">
         <button
           onClick={handleDownloadCV}
           className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 shadow-lg hover:shadow-xl"
