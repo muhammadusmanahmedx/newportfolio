@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useEffect, useRef } from "react";
 import {
   Pen,
@@ -66,7 +65,7 @@ export default function AboutUsSection() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" as const },
     },
   };
 
@@ -407,7 +406,7 @@ interface ServiceItemProps {
     visible: {
       opacity: number;
       y?: number;
-      transition: { duration: number; ease: string };
+      transition: { duration: number; ease: "easeOut" };
     };
   };
   delay: number;
