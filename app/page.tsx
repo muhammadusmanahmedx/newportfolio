@@ -1,14 +1,11 @@
 import Image from "next/image";
-// import { Preview } from "./components/hero";
 import { LandingAccordionItem } from "./components/ui/services";
 import { RevealImageList } from "./components/ui/revealimg";
 import AboutUsSection from "./components/about";
 import DesignWebsiteHeader from "./components/header";
 import { Footer } from "./components/footer";
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
-import { PortfolioSection } from "./components/portfolio";
-// import PortfolioSection from "./components/portfolio";
-// import { Footer } from "./components/footer";
+import { PortfolioSection, PortfolioItem } from "./components/portfolio";
 
 export default function Home() {
   const portfolioItems: PortfolioItem[] = [
@@ -47,9 +44,7 @@ export default function Home() {
       {/* <Preview /> */}
       <LandingAccordionItem />
       {/* <RevealImageList /> */}
-
       <PortfolioSection items={portfolioItems} />
-
       <Footer
         logo={
           <img src="/my-logo.svg" alt="Fatima Logo" className="h-8 w-auto" />

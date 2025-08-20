@@ -1,5 +1,3 @@
-import { Hexagon } from "lucide-react";
-
 interface PortfolioItem {
   id: number;
   title: string;
