@@ -185,7 +185,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
     const runner = useRef<any>(null); // Using any type to avoid Matter.js type issues
     const bodiesMap = useRef(new Map<string, PhysicsBody>());
     const frameId = useRef<number | null>(null);
-    const mouseConstraint = useRef<any>(); // Using any type to avoid Matter.js type issues
+    const mouseConstraint = useRef<any>(null); // Using any type to avoid Matter.js type issues
     const mouseDown = useRef(false);
     const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
