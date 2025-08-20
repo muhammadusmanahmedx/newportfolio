@@ -378,7 +378,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         Events.on(engine.current, "beforeUpdate", (event) => {
           if (canvas.current) {
             if (!mouseDown.current && !touchingMouse()) {
-              canvas.current.style.cursor = "defaultweekdays";
+              canvas.current.style.cursor = "default";
             } else if (touchingMouse()) {
               canvas.current.style.cursor = mouseDown.current
                 ? "grabbing"
@@ -473,7 +473,6 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
     const startEngine = useCallback(() => {
       if (runner.current) {
         runner.current.enabled = true;
-
         Runner.run(runner.current, engine.current);
       }
       if (render.current) {
@@ -518,7 +517,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
       });
       updateElements();
       handleResize();
-    }, []);
+    }, [canvasSize, handleResize, stopEngine, updateElements]);
 
     useImperativeHandle(
       ref,
@@ -527,7 +526,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         stop: stopEngine,
         reset,
       }),
-      [startEngine, stopEngine]
+      [startEngine, stopEngine, reset]
     );
 
     useEffect(() => {
