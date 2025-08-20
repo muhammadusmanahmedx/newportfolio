@@ -197,7 +197,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
     const bodiesMap = useRef(new Map<string, PhysicsBody>());
     const frameId = useRef<number | null>(null);
 
-    const mouseConstraint = useRef<Matter.MouseConstraint>();
+    const mouseConstraint = useRef<Matter.MouseConstraint | null>(null);
     const mouseDown = useRef(false);
     const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
