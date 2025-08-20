@@ -250,11 +250,12 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         } else {
           body = Bodies.rectangle(x, y, width, height, {
             ...props.matterBodyOptions,
+            chamfer: props.matterBodyOptions?.chamfer ?? undefined, // ✅ removes null
             angle: angle,
             render: {
-              fillStyle: debug ? "#888888" : "#00000000",
-              strokeStyle: debug ? "#333333" : "#00000000",
-              lineWidth: debug ? 3 : 0,
+              fillStyle: "blue",
+              strokeStyle: "black",
+              lineWidth: 1,
             },
           });
         }
