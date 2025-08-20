@@ -104,7 +104,7 @@ export function LandingAccordionItem() {
           {/* Left Side: Text Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tighter">
-              Transform Your Business with Our
+              Transform Your Business with my
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
                 {" "}
                 Premium Services

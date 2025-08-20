@@ -4,82 +4,94 @@ import { RevealImageList } from "./components/ui/revealimg";
 import AboutUsSection from "./components/about";
 import DesignWebsiteHeader from "./components/header";
 import { Footer } from "./components/footer";
-import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { PortfolioSection, PortfolioItem } from "./components/portfolio";
+import OrbitingCirclesDemo from "./components/techstack";
 
 export default function Home() {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "E-Commerce App",
-      description:
-        "A user-friendly shopping experience with intuitive navigation.",
+      title: "Website UI/UX Designs",
+      description: "Showcase of web designs and responsive layouts - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
       link: "#",
     },
     {
       id: 2,
-      title: "Design System",
-      description:
-        "A reusable design system for consistent UI across projects.",
+      title: "Mobile App UI/UX Designs",
+      description: "Screens of mobile app interfaces and prototypes - Coming Soon",
+      imageUrl:
+        "https://images.unsplash.com/photo-1600585154495-3b9e6a716f8a?auto=format&fit=crop&w=1350&q=80",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "Branding & Graphic Design",
+      description: "Logos, posters, brand kits, and marketing graphics - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154526-990d71ebb710?auto=format&fit=crop&w=1350&q=80",
       link: "#",
     },
     {
-      id: 3,
-      title: "Mobile Banking",
-      description: "Secure and modern banking app interface.",
+      id: 4,
+      title: "Creative Experiments",
+      description: "Personal projects, concept art, and visual explorations - Coming Soon",
       imageUrl:
-        "https://images.unsplash.com/photo-1600585154495-3b9e6a716f8a?auto=format&fit=crop&w=1350&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
       link: "#",
     },
   ];
 
   return (
     <>
+    <section id="home">
       <DesignWebsiteHeader />
-      <AboutUsSection />
-      {/* <Preview /> */}
-      <LandingAccordionItem />
-      {/* <RevealImageList /> */}
-      <PortfolioSection items={portfolioItems} />
-      <Footer
-        logo={
-          <img src="/my-logo.svg" alt="Fatima Logo" className="h-8 w-auto" />
-        }
-        brandName="Fatima's Portfolio"
-        socialLinks={[
-          {
-            icon: <Linkedin className="w-5 h-5" />,
-            href: "https://linkedin.com",
-            label: "LinkedIn",
-          },
-          {
-            icon: <Instagram className="w-5 h-5" />,
-            href: "https://instagram.com",
-            label: "Instagram",
-          },
-          {
-            icon: <Twitter className="w-5 h-5" />,
-            href: "https://twitter.com",
-            label: "Twitter",
-          },
-        ]}
-        mainLinks={[
-          { href: "#about", label: "About" },
-          { href: "#projects", label: "Projects" },
-          { href: "#contact", label: "Contact" },
-        ]}
-        legalLinks={[
-          { href: "/privacy", label: "Privacy Policy" },
-          { href: "/terms", label: "Terms of Service" },
-        ]}
-        copyright={{
-          text: "© 2025 Fatima. All rights reserved.",
-        }}
-      />
+      </section>
+      <section id="about-section">
+        <AboutUsSection />
+      </section>
+      <section id="tech-stack">
+        <OrbitingCirclesDemo />
+      </section>
+      <section id="services-section">
+        <LandingAccordionItem />
+      </section>
+      <section id="portfolio-section">
+        <PortfolioSection items={portfolioItems} />
+      </section>
+      <section id="contact-section">
+        <Footer
+          logo={
+            <img
+              src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755711503/depositphotos_65122799-stock-illustration-letter-f-wing-flag-logo_jtvub3.png"
+              alt="Fatima Logo"
+              className="h-8 w-auto"
+            />
+          }
+          brandName="Fatima Nazir"
+          socialLinks={[
+            {
+              icon: <Linkedin className="w-5 h-5" />,
+              href: "https://linkedin.com/in/fatima-nazir-40471027a",
+              label: "LinkedIn",
+            },
+          ]}
+          mainLinks={[
+            { href: "#about-section", label: "About" },
+            { href: "#portfolio-section", label: "Portfolio" },
+            { href: "#contact-section", label: "Contact" },
+          ]}
+          legalLinks={[
+            { href: "/privacy", label: "Privacy Policy" },
+            { href: "/terms", label: "Terms of Service" },
+          ]}
+          copyright={{
+            text: "© 2024 Fatima Nazir. All rights reserved.",
+          }}
+        />
+      </section>
     </>
   );
 }

@@ -1,14 +1,13 @@
+
 "use client";
 
 import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import {
-  Pen,
-  PaintBucket,
-  Home,
-  Ruler,
   PenTool,
-  Building2,
+  Smartphone,
+  Palette,
+  TrendingUp,
   Award,
   Users,
   Calendar,
@@ -17,7 +16,6 @@ import {
   Star,
   ArrowRight,
   Zap,
-  TrendingUp,
 } from "lucide-react";
 import {
   motion,
@@ -34,7 +32,6 @@ export default function AboutUsSection() {
   const isInView = useInView(sectionRef, { once: false, amount: 0.1 });
   const isStatsInView = useInView(statsRef, { once: false, amount: 0.3 });
 
-  // Parallax effect for decorative elements
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -65,92 +62,66 @@ export default function AboutUsSection() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" as const },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   const services = [
     {
-      icon: <Pen className="w-6 h-6" />,
-      secondaryIcon: (
-        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
-      ),
-      title: "Interior",
-      description:
-        "Transform your living spaces with our expert interior design services. We blend functionality and aesthetics to create spaces that reflect your unique style and personality.",
-      position: "left",
-    },
-    {
-      icon: <Home className="w-6 h-6" />,
-      secondaryIcon: (
-        <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
-      ),
-      title: "Exterior",
-      description:
-        "Make a lasting impression with stunning exterior designs that enhance curb appeal and create harmonious connections between architecture and landscape.",
-      position: "left",
-    },
-    {
       icon: <PenTool className="w-6 h-6" />,
       secondaryIcon: (
-        <Star className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
+        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
       ),
-      title: "Design",
+      title: "UI/UX Design",
       description:
-        "Our innovative design process combines creativity with practicality, resulting in spaces that are both beautiful and functional for everyday living.",
+        "Creating intuitive and beautiful user interfaces for websites and web applications with a focus on user experience and conversion optimization, including wireframing, prototyping, and responsive design.",
       position: "left",
     },
     {
-      icon: <PaintBucket className="w-6 h-6" />,
-      secondaryIcon: (
-        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
-      ),
-      title: "Decoration",
-      description:
-        "Elevate your space with our curated decoration services. From color schemes to textiles and accessories, we perfect every detail to bring your vision to life.",
-      position: "right",
-    },
-    {
-      icon: <Ruler className="w-6 h-6" />,
+      icon: <Smartphone className="w-6 h-6" />,
       secondaryIcon: (
         <CheckCircle className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
       ),
-      title: "Planning",
+      title: "Mobile App Design",
       description:
-        "Our meticulous planning process ensures every project runs smoothly from concept to completion, with careful attention to timelines, budgets, and requirements.",
-      position: "right",
+        "Designing engaging mobile app interfaces that provide seamless user experiences across iOS and Android platforms, with expertise in mobile UI, prototyping, and user flow mapping.",
+      position: "left",
     },
     {
-      icon: <Building2 className="w-6 h-6" />,
+      icon: <Palette className="w-6 h-6" />,
       secondaryIcon: (
         <Star className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
       ),
-      title: "Execution",
+      title: "Graphic Design",
       description:
-        "Watch your dream space come to life through our flawless execution. Our skilled team handles every aspect of implementation with precision and care.",
+        "Comprehensive graphic design services including logo design, brand identity, social media graphics, and print design to create visually stunning and cohesive brand experiences.",
+      position: "right",
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      secondaryIcon: (
+        <Sparkles className="w-4 h-4 absolute -top-1 -right-1 text-[#E8B4CB]" />
+      ),
+      title: "ASO Consultation",
+      description:
+        "App Store Optimization strategies to improve your app's visibility and download rates, including keyword research, store optimization, competitor analysis, and performance tracking.",
       position: "right",
     },
   ];
 
   const stats = [
-    { icon: <Award />, value: 150, label: "Projects Completed", suffix: "+" },
-    { icon: <Users />, value: 1200, label: "Happy Clients", suffix: "+" },
-    { icon: <Calendar />, value: 12, label: "Years Experience", suffix: "" },
-    {
-      icon: <TrendingUp />,
-      value: 98,
-      label: "Satisfaction Rate",
-      suffix: "%",
-    },
+    { icon: <Award />, value: 10, label: "Projects Completed", suffix: "+" },
+    { icon: <Users />, value: 100, label: "Client Satisfaction", suffix: "%" },
+    { icon: <Calendar />, value: 2, label: "Years Experience", suffix: "+" },
+    { icon: <CheckCircle />, value: 3, label: "Tools Mastered", suffix: "+" },
   ];
 
   return (
     <section
       id="about-section"
       ref={sectionRef}
-      className="w-full py-24 px-4 bg-gradient-to-b from-[#FDF2F8] to-[#FCE7F3] text-[#831843] overflow-hidden relative"
+      className="w-full py-12 pt-8 px-4 bg-gradient-to-b from-[#FDF2F8] to-[#FCE7F3] text-[#831843] overflow-hidden relative"
     >
-      {/* Decorative background elements */}
       <motion.div
         className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#BE185D]/5 blur-3xl"
         style={{ y: y1, rotate: rotate1 }}
@@ -202,7 +173,7 @@ export default function AboutUsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Zap className="w-4 h-4" />
-            DISCOVER OUR STORY
+            MY STORY
           </motion.span>
           <h2 className="text-4xl md:text-5xl font-light mb-4 text-center">
             About Me
@@ -219,14 +190,18 @@ export default function AboutUsSection() {
           className="text-center max-w-2xl mx-auto mb-16 text-[#831843]/80"
           variants={itemVariants}
         >
-          We are a passionate team of designers and architects dedicated to
-          creating beautiful, functional spaces that inspire and elevate
-          everyday living. With attention to detail and commitment to
-          excellence, we transform visions into reality.
+          I&apos;m Fatima Nazir, a passionate Graphic and UI/UX Designer with a
+          deep love for creating visually appealing and user-centered digital
+          experiences. My journey combines creativity with technical knowledge as
+          I pursue my Bachelor&apos;s degree in Computer Science at Riphah
+          International University. What sets me apart is my diverse experience -
+          from completing a UI/UX design internship at Bitech to working on ASO
+          strategies at Capstone Technology. I also run my own nail studio
+          business, which has given me valuable insights into entrepreneurship and
+          customer experience design.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Left Column */}
           <div className="space-y-16">
             {services
               .filter((service) => service.position === "left")
@@ -243,8 +218,6 @@ export default function AboutUsSection() {
                 />
               ))}
           </div>
-
-          {/* Center Image */}
           <div className="flex justify-center items-center order-first md:order-none mb-8 md:mb-0">
             <motion.div
               className="relative w-full max-w-xs"
@@ -258,8 +231,8 @@ export default function AboutUsSection() {
                 whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
               >
                 <img
-                  // src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755655934/d70a710bb5af9fe4b0b57428cc80999f_egjmpb.png"
-                  alt="Modern House"
+                  src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755655934/d70a710bb5af9fe4b0b57428cc80999f_egjmpb.png"
+                  alt="Design Portfolio"
                   className="w-full h-full object-cover"
                 />
                 <motion.div
@@ -273,7 +246,7 @@ export default function AboutUsSection() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Our Portfolio <ArrowRight className="w-4 h-4" />
+                    View My Portfolio <ArrowRight className="w-4 h-4" />
                   </motion.button>
                 </motion.div>
               </motion.div>
@@ -283,8 +256,6 @@ export default function AboutUsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               ></motion.div>
-
-              {/* Floating accent elements */}
               <motion.div
                 className="absolute -top-4 -right-8 w-16 h-16 rounded-full bg-[#BE185D]/10"
                 initial={{ opacity: 0, y: 20 }}
@@ -299,8 +270,6 @@ export default function AboutUsSection() {
                 transition={{ duration: 1, delay: 1.1 }}
                 style={{ y: y2 }}
               ></motion.div>
-
-              {/* Additional decorative elements */}
               <motion.div
                 className="absolute -top-10 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#BE185D]"
                 animate={{
@@ -328,8 +297,6 @@ export default function AboutUsSection() {
               ></motion.div>
             </motion.div>
           </div>
-
-          {/* Right Column */}
           <div className="space-y-16">
             {services
               .filter((service) => service.position === "right")
@@ -348,8 +315,7 @@ export default function AboutUsSection() {
           </div>
         </div>
 
-        {/* Stats Section */}
-        {/* <motion.div
+        <motion.div
           ref={statsRef}
           className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           initial="hidden"
@@ -366,9 +332,8 @@ export default function AboutUsSection() {
               delay={index * 0.1}
             />
           ))}
-        </motion.div> */}
+        </motion.div>
 
-        {/* CTA Section */}
         {/* <motion.div
           className="mt-20 bg-[#831843] text-white p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6"
           initial={{ opacity: 0, y: 30 }}
@@ -377,10 +342,10 @@ export default function AboutUsSection() {
         >
           <div className="flex-1">
             <h3 className="text-2xl font-medium mb-2">
-              Ready to transform your space?
+              Ready to bring your design vision to life?
             </h3>
             <p className="text-white/80">
-              Let's create something beautiful together.
+              Let&apos;s discuss your project and create something amazing together.
             </p>
           </div>
           <motion.button
@@ -406,7 +371,7 @@ interface ServiceItemProps {
     visible: {
       opacity: number;
       y?: number;
-      transition: { duration: number; ease: "easeOut" };
+      transition: { duration: number; ease: string };
     };
   };
   delay: number;
