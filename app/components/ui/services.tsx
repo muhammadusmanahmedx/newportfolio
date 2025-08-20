@@ -48,9 +48,11 @@ const AccordionItem = ({
   return (
     <div
       className={`
-        relative h-[450px] rounded-2xl overflow-hidden cursor-pointer
+        relative overflow-hidden cursor-pointer
         transition-all duration-700 ease-in-out
-        ${isActive ? "w-[400px]" : "w-[60px]"}
+        h-[200px] w-full rounded-2xl
+        md:h-[450px] md:rounded-2xl
+        ${isActive ? "md:w-[400px]" : "md:w-[60px]"}
       `}
       onMouseEnter={onMouseEnter}
     >
@@ -73,11 +75,11 @@ const AccordionItem = ({
         className={`
           absolute text-white text-lg font-semibold whitespace-nowrap
           transition-all duration-300 ease-in-out drop-shadow-lg
+          bottom-6 left-1/2 -translate-x-1/2 rotate-0
           ${
             isActive
-              ? "bottom-6 left-1/2 -translate-x-1/2 rotate-0" // Active state: horizontal, bottom-center
-              : // Inactive state: vertical, positioned at the bottom, for all screen sizes
-                "w-auto text-left bottom-24 left-1/2 -translate-x-1/2 rotate-90"
+              ? "md:bottom-6 md:left-1/2 md:-translate-x-1/2 md:rotate-0"
+              : "md:bottom-24 md:left-1/2 md:-translate-x-1/2 md:rotate-90"
           }
         `}
       >
@@ -96,7 +98,7 @@ export function LandingAccordionItem() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-pink-50 to-rose-100 font-sans min-h-screen">
+    <div className="bg-gradient-to-br from-pink-50 to-rose-100 font-sans ">
       <section className="container mx-auto px-4 py-12 md:py-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left Side: Text Content */}
@@ -124,7 +126,7 @@ export function LandingAccordionItem() {
 
           {/* Right Side: Image Accordion */}
           <div className="w-full md:w-1/2">
-            <div className="flex flex-row items-center justify-center gap-4 overflow-x-auto p-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 overflow-x-auto p-4">
               {accordionItems.map((item, index) => (
                 <AccordionItem
                   key={item.id}
