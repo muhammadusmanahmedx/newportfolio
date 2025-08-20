@@ -1,27 +1,26 @@
 "use client";
 
-import { Gravity, MatterBody } from "./gravity";
+import { Gravity, MatterBody } from "./ui/gravity";
 
 function Preview() {
   const handleDownloadCV = () => {
     // Replace with your actual CV file path
-    const link = document.createElement('a');
-    link.href = '/cv.pdf'; // Make sure to add your CV file to the public folder
-    link.download = 'Won_Solutions_CV.pdf';
+    const link = document.createElement("a");
+    link.href = "/cv.pdf"; // Make sure to add your CV file to the public folder
+    link.download = "Won_Solutions_CV.pdf";
     link.click();
   };
 
   return (
     <div className="w-full h-full min-h-[500px] flex flex-col relative font-azeretMono bg-pink-50">
-        
-     <p className="pt-20 text-base sm:text-xl md:text-2xl text-pink-800 w-full text-center">
+      <p className="pt-20 text-base sm:text-xl md:text-2xl text-pink-800 w-full text-center">
         i'm
       </p>
-      
+
       <div className="pt-2 text-6xl sm:text-7xl md:text-8xl text-pink-900 w-full text-center font-calendas italic">
-        Fatima Nazir
+        My Name
       </div>
-      
+
       {/* Download CV Button */}
       <div className="flex justify-center mt-6">
         <button
