@@ -250,7 +250,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         } else {
           body = Bodies.rectangle(x, y, width, height, {
             ...props.matterBodyOptions,
-            chamfer: props.matterBodyOptions?.chamfer ?? undefined, // ✅ removes null
+            chamfer: props.matterBodyOptions?.chamfer ?? undefined,
             angle: angle,
             render: {
               fillStyle: "blue",
@@ -378,7 +378,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         Events.on(engine.current, "beforeUpdate", (event) => {
           if (canvas.current) {
             if (!mouseDown.current && !touchingMouse()) {
-              canvas.current.style.cursor = "default";
+              canvas.current.style.cursor = "defaultweekdays";
             } else if (touchingMouse()) {
               canvas.current.style.cursor = mouseDown.current
                 ? "grabbing"
@@ -434,16 +434,19 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
 
       if (mouseConstraint.current) {
         World.remove(engine.current.world, mouseConstraint.current);
+        mouseConstraint.current = null;
       }
 
       if (render.current) {
         Mouse.clearSourceEvents(render.current.mouse);
         Render.stop(render.current);
         render.current.canvas.remove();
+        render.current = null;
       }
 
       if (runner.current) {
         Runner.stop(runner.current);
+        runner.current = null;
       }
 
       if (engine.current) {
