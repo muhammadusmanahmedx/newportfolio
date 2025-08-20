@@ -16,6 +16,7 @@ const Matter = require("matter-js");
 import { cn } from "@/lib/utils";
 
 import SVGPathCommander from "svg-path-commander";
+import { Engine, Render, Runner } from "matter-js";
 
 // Function to convert SVG path "d" to vertices
 function parsePathToVertices(path: string, sampleLength = 15) {
@@ -180,13 +181,14 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
     ref
   ) => {
     const canvas = useRef<HTMLDivElement>(null);
-    const engine = useRef(Matter.Engine.create());
-    const render = useRef<any>(null); // Using any type to avoid Matter.js type issues
-    const runner = useRef<any>(null); // Using any type to avoid Matter.js type issues
+    const engine = useRef(Engine.create());
+    const render = useRef<Render>(null);
+    const runner = useRef<Runner>(null);
     const bodiesMap = useRef(new Map<string, PhysicsBody>());
-    const frameId = useRef<number | null>(null);
-    const mouseConstraint = useRef<any>(null); // Using any type to avoid Matter.js type issues // Using any type to avoid Matter.js type issues
+    const frameId = useRef<number>(null);
+    const mouseConstraint = useRef<any>(null);
     const mouseDown = useRef(false);
+
     const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
 
     const isRunning = useRef(false);
