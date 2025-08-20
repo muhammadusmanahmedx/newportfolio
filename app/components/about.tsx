@@ -1,4 +1,3 @@
-
 "use client";
 
 import type React from "react";
@@ -62,7 +61,7 @@ export default function AboutUsSection() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" as const },
     },
   };
 
@@ -333,29 +332,6 @@ export default function AboutUsSection() {
             />
           ))}
         </motion.div>
-
-        {/* <motion.div
-          className="mt-20 bg-[#831843] text-white p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <div className="flex-1">
-            <h3 className="text-2xl font-medium mb-2">
-              Ready to bring your design vision to life?
-            </h3>
-            <p className="text-white/80">
-              Let&apos;s discuss your project and create something amazing together.
-            </p>
-          </div>
-          <motion.button
-            className="bg-[#BE185D] hover:bg-[#BE185D]/90 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started <ArrowRight className="w-4 h-4" />
-          </motion.button>
-        </motion.div> */}
       </motion.div>
     </section>
   );
@@ -390,7 +366,7 @@ function ServiceItem({
   return (
     <motion.div
       className="flex flex-col group"
-      variants={variants}
+      // variants={variants}
       transition={{ delay }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
