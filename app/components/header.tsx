@@ -259,7 +259,7 @@ export default function UIUXDesignerHeader() {
         </div>
       )}
 
-      <section className="relative min-h-[120vh] overflow-hidden bg-gradient-to-b from-pink-50 to-pink-100 text-pink-900 flex items-center justify-center pt-12 sm:pt-16 md:pt-20 lg:pt-24">
+      <section className="relative min-h-[120vh] overflow-hidden bg-gradient-to-b from-pink-50 to-pink-100 text-pink-900 flex items-center justify-center pt-4 sm:pt-6 md:pt-8 lg:pt-10">
         <div className="absolute inset-0">
           <div className="absolute top-10 sm:top-20 right-10 sm:right-20 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 rounded-full bg-gradient-to-br from-pink-200/30 to-transparent blur-3xl animate-pulse sm:opacity-100 opacity-50" />
           <div
