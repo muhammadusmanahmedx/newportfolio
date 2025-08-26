@@ -2,7 +2,7 @@
 "use client";
 
 interface FooterProps {
-  logo: React.ReactNode; // You can pass <img />, <svg />, or text
+  logo: React.ReactNode;
   brandName: string;
   socialLinks?: Array<{
     icon: React.ReactNode;
@@ -32,18 +32,17 @@ export function Footer({
   copyright,
 }: FooterProps) {
   return (
-    <footer className="bg-[#831843] pb-6 pt-12 sm:pt-16 lg:pb-8 lg:pt-24">
+    <footer className="bg-[#FDF2F8] pb-6 pt-12 sm:pt-16 lg:pb-8 lg:pt-24">
       <div className="px-4 sm:px-6 lg:px-8">
         {/* Logo + Socials */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <a
             href="/"
-            className="flex items-center gap-x-2 text-white"
+            className="flex items-center gap-x-2 text-[#831843]"
             aria-label={brandName}
           >
-            {/* Custom Logo (can be <img> or <svg>) */}
             {logo}
-            <span className="font-bold text-lg sm:text-xl text-[#E8B4CB]">
+            <span className="font-bold text-lg sm:text-xl text-[#BE185D]">
               {brandName}
             </span>
           </a>
@@ -56,7 +55,7 @@ export function Footer({
                     href={link.href}
                     target="_blank"
                     aria-label={link.label}
-                    className="flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-[#BE185D] hover:bg-[#BE185D]/90 text-white transition-colors"
+                    className="flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-[#EC4899] hover:bg-[#DB2777] text-white transition-colors"
                   >
                     {link.icon}
                   </a>
@@ -67,7 +66,7 @@ export function Footer({
         </div>
 
         {/* Links + Copyright */}
-        <div className="border-t mt-6 pt-6 border-white/20 grid gap-6 md:gap-8 lg:grid-cols-10">
+        <div className="border-t mt-6 pt-6 border-[#BE185D]/20 grid gap-6 md:gap-8 lg:grid-cols-10">
           {/* Main Links */}
           {mainLinks.length > 0 && (
             <nav className="lg:col-[4/11]">
@@ -76,7 +75,7 @@ export function Footer({
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="text-sm sm:text-base text-[#E8B4CB] underline-offset-4 hover:underline hover:text-[#BE185D]"
+                      className="text-sm sm:text-base text-[#BE185D] underline-offset-4 hover:underline hover:text-[#9D174D]"
                     >
                       {link.label}
                     </a>
@@ -94,7 +93,7 @@ export function Footer({
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="text-sm sm:text-base text-[#FFFFFF80] underline-offset-4 hover:underline hover:text-[#E8B4CB]"
+                      className="text-sm sm:text-base text-[#831843]/70 underline-offset-4 hover:underline hover:text-[#BE185D]"
                     >
                       {link.label}
                     </a>
@@ -105,8 +104,7 @@ export function Footer({
           )}
 
           {/* Copyright */}
-          {/* Copyright + Credit */}
-          <div className="text-center lg:text-left text-sm sm:text-base leading-6 text-[#FFFFFF80] whitespace-nowrap lg:row-[1/3] lg:col-[1/4] space-y-1">
+          <div className="text-center lg:text-left text-sm sm:text-base leading-6 text-[#831843]/70 whitespace-nowrap lg:row-[1/3] lg:col-[1/4] space-y-1">
             <div>{copyright.text}</div>
             {copyright.license && <div>{copyright.license}</div>}
             <div>
@@ -115,7 +113,7 @@ export function Footer({
                 href="https://wonsol.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#E8B4CB] hover:text-[#BE185D] font-medium transition-colors"
+                className="text-[#BE185D] hover:text-[#9D174D] font-medium transition-colors"
               >
                 Won Solutions
               </a>

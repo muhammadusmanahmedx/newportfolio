@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { LandingAccordionItem } from "./components/ui/services";
+// import LandingAccordionItem from "./components/ui/services";
 import { RevealImageList } from "./components/ui/revealimg";
 import AboutUsSection from "./components/about";
 import DesignWebsiteHeader from "./components/header";
@@ -7,13 +9,15 @@ import { Footer } from "./components/footer";
 import { Linkedin } from "lucide-react";
 import { PortfolioSection, PortfolioItem } from "./components/portfolio";
 import OrbitingCirclesDemo from "./components/techstack";
+import ContactForm from "./components/Contactform";
 
 export default function Home() {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
       title: "Website UI/UX Designs",
-      description: "Showcase of web designs and responsive layouts - Coming Soon",
+      description:
+        "Showcase of web designs and responsive layouts - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
       link: "#",
@@ -21,7 +25,8 @@ export default function Home() {
     {
       id: 2,
       title: "Mobile App UI/UX Designs",
-      description: "Screens of mobile app interfaces and prototypes - Coming Soon",
+      description:
+        "Screens of mobile app interfaces and prototypes - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154495-3b9e6a716f8a?auto=format&fit=crop&w=1350&q=80",
       link: "#",
@@ -29,7 +34,8 @@ export default function Home() {
     {
       id: 3,
       title: "Branding & Graphic Design",
-      description: "Logos, posters, brand kits, and marketing graphics - Coming Soon",
+      description:
+        "Logos, posters, brand kits, and marketing graphics - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154526-990d71ebb710?auto=format&fit=crop&w=1350&q=80",
       link: "#",
@@ -37,7 +43,8 @@ export default function Home() {
     {
       id: 4,
       title: "Creative Experiments",
-      description: "Personal projects, concept art, and visual explorations - Coming Soon",
+      description:
+        "Personal projects, concept art, and visual explorations - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
       link: "#",
@@ -46,8 +53,8 @@ export default function Home() {
 
   return (
     <>
-    <section id="home">
-      <DesignWebsiteHeader />
+      <section id="home">
+        <DesignWebsiteHeader />
       </section>
       <section id="about-section">
         <AboutUsSection />
@@ -61,6 +68,10 @@ export default function Home() {
       <section id="portfolio-section">
         <PortfolioSection items={portfolioItems} />
       </section>
+      <section id="contact">
+        <ContactForm />
+      </section>
+
       <section id="contact-section">
         <Footer
           logo={

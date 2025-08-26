@@ -61,7 +61,7 @@ export function OrbitingCircles({
             className={cn(
               `absolute flex size-[var(--icon-size)] transform-gpu animate-orbit items-center justify-center rounded-full`,
               { "[animation-direction:reverse]": reverse },
-              className,
+              className
             )}
             {...props}
           >
@@ -93,7 +93,11 @@ const Icons = {
     </a>
   ),
   photoshop: () => (
-    <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://www.adobe.com/products/photoshop.html"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img
         src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755710882/photoshop_pgsngk.png"
         alt="Photoshop Logo"
@@ -102,7 +106,11 @@ const Icons = {
     </a>
   ),
   illustrator: () => (
-    <a href="https://www.adobe.com/products/illustrator.html" target="_blank" rel="noopener noreferrer">
+    <a
+      href="https://www.adobe.com/products/illustrator.html"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img
         src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755710826/illustrator_m0tajx.png"
         alt="Illustrator Logo"
@@ -119,8 +127,12 @@ const Icons = {
       />
     </a>
   ),
- lucid: () => (
-    <a href="https://www.lucidchart.com/pages" target="_blank" rel="noopener noreferrer">
+  lucid: () => (
+    <a
+      href="https://www.lucidchart.com/pages"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <img
         src="
   https://res.cloudinary.com/dshjm6hcx/image/upload/v1755712354/3865608556737_8f4ae4a98b36ab6912b3_512_z9dzdk.png"
@@ -129,7 +141,7 @@ const Icons = {
       />
     </a>
   ),
- spline: () => (
+  spline: () => (
     <a href="http://spline.design/" target="_blank" rel="noopener noreferrer">
       <img
         src="
@@ -139,7 +151,7 @@ const Icons = {
       />
     </a>
   ),
-   framer: () => (
+  framer: () => (
     <a href="framer.com" target="_blank" rel="noopener noreferrer">
       <img
         src="
@@ -149,56 +161,56 @@ const Icons = {
       />
     </a>
   ),
-
 };
 
 export default function TechStackSection() {
   return (
-   <section className="relative flex flex-col items-center justify-center min-h-screen w-full bg-[#FCE7F3] overflow-hidden">
-  <h2 className="text-4xl font-bold text-rose-800 mb-4">UI/UX Tech Stack</h2>
-  <p className="text-lg text-rose-600 max-w-2xl text-center mb-8">
-    Explore the powerful tools we use to craft stunning and user-friendly designs, from prototyping to final visuals.
-  </p>
+    <section className="relative flex flex-col items-center justify-center min-h-screen w-full bg-[#FCE7F3] overflow-hidden">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-rose-800 mb-3 sm:mb-4 text-center">
+        UI/UX Tech Stack
+      </h2>
 
-  <div className="relative flex h-[500px] w-full flex-col items-center justify-center">
-    {/* Center Image */}
-  <div className="absolute z-10 flex items-center justify-center">
-  <div className="relative w-44 h-44 flex items-center justify-center">
-    {/* Gradient background */}
-   {/* <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(236,72,153,1)_0%,rgba(236,72,153,0.3)_70%,#FCE7F3_100%)]"></div> */}
+      <p className="text-base sm:text-lg md:text-xl p-4 text-rose-600 max-w-md sm:max-w-xl md:max-w-2xl text-center mb-6 sm:mb-8">
+        Explore the powerful tools we use to craft stunning and user-friendly
+        designs, from prototyping to final visuals.
+      </p>
 
-    
-    {/* Logo */}
-    <img
-      src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755711503/depositphotos_65122799-stock-illustration-letter-f-wing-flag-logo_jtvub3.png"
-      alt="Center Logo"
-      className="w-40 h-40 object-contain rounded-full relative z-10"
-    />
-  </div>
-</div>
+      <div className="relative flex h-[500px] w-full flex-col items-center justify-center">
+        {/* Center Image */}
+        <div className="absolute z-10 flex items-center justify-center">
+          <div className="relative w-44 h-44 flex items-center justify-center">
+            {/* Gradient background */}
+            {/* <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(236,72,153,1)_0%,rgba(236,72,153,0.3)_70%,#FCE7F3_100%)]"></div> */}
 
-    {/* Outer Orbit */}
-    <OrbitingCircles iconSize={60} radius={190}>
-      {/* <Icons.figma /> */}
-      <Icons.canva />
-   
-      <Icons.spline/>
-       <Icons.illustrator />
-      <Icons.photoshop />
-      {/* <Icons.photoshop /> */}
-      {/* <Icons.illustrator /> */}
-      <Icons.sketch />
-    </OrbitingCircles>
+            {/* Logo */}
+            <img
+              src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755711503/depositphotos_65122799-stock-illustration-letter-f-wing-flag-logo_jtvub3.png"
+              alt="Center Logo"
+              className="w-40 h-40 object-contain rounded-full relative z-10"
+            />
+          </div>
+        </div>
 
-    {/* Inner Orbit */}
-    <OrbitingCircles iconSize={60} radius={110} reverse speed={2}>
-      <Icons.figma />
-       <Icons.lucid/>
-      <Icons.framer/>
-     
-    </OrbitingCircles>
-  </div>
-</section>
+        {/* Outer Orbit */}
+        <OrbitingCircles iconSize={40} radius={160}>
+          {/* <Icons.figma /> */}
+          <Icons.canva />
 
+          <Icons.spline />
+          <Icons.illustrator />
+          <Icons.photoshop />
+          {/* <Icons.photoshop /> */}
+          {/* <Icons.illustrator /> */}
+          <Icons.sketch />
+        </OrbitingCircles>
+
+        {/* Inner Orbit */}
+        <OrbitingCircles iconSize={40} radius={80} reverse speed={2}>
+          <Icons.figma />
+          <Icons.lucid />
+          <Icons.framer />
+        </OrbitingCircles>
+      </div>
+    </section>
   );
 }
