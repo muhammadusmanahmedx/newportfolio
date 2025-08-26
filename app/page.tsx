@@ -15,11 +15,11 @@ export default function Home() {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 1,
-      title: "Website UI/UX Designs",
+      title: "To Do List Mobile App Design",
       description:
-        "Showcase of web designs and responsive layouts - Coming Soon",
+        "A clean and intuitive mobile app design for managing tasks with ease and productivity",
       imageUrl:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
+        "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
       link: "#",
     },
     {
@@ -47,6 +47,15 @@ export default function Home() {
         "Personal projects, concept art, and visual explorations - Coming Soon",
       imageUrl:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
+      link: "#",
+    },
+    {
+      id: 5,
+      title: "To Do List Mobile App Design",
+      description:
+        "A clean and intuitive mobile app design for managing tasks with ease and productivity",
+      imageUrl:
+        "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
       link: "#",
     },
   ];
