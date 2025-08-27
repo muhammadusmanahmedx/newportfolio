@@ -139,7 +139,7 @@ export default function UIUXDesignerHeader() {
                 </a>
               </div>
             ))}
-            <button className="bg-rose-600 hover:bg-pink-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-lg">
+            <button className="bg-pink-500 hover:bg-pink-500 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 shadow-lg">
               <Download className="w-4 h-4" />
               Resume
             </button>
@@ -193,40 +193,40 @@ export default function UIUXDesignerHeader() {
             `}
           >
             <button
-              className="absolute top-4 right-4 text-rose-700 hover:text-rose-500"
+              className="absolute top-4 right-4 text-pink-700 hover:text-rose-500"
               onClick={() => setIsSidebarOpen(false)}
             >
               <X className="w-6 h-6" />
             </button>
             <div className="mt-12 flex flex-col space-y-6">
-              <h2 className="text-2xl font-bold text-rose-700 mb-4">
+              <h2 className="text-2xl font-bold text-pink-700 mb-4">
                 Contact Me
               </h2>
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-rose-500" />
+                  <Mail className="w-5 h-5 text-pink-500" />
                   <a
                     href="mailto:fatimanaziir32@gmail.com"
-                    className="text-rose-700 hover:text-rose-500 text-sm sm:text-base"
+                    className="text-pink-700 hover:text-pink-500 text-sm sm:text-base"
                   >
                     fatimanaziir32@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-rose-500" />
+                  <Phone className="w-5 h-5 text-pink-500" />
                   <a
                     href="tel:+923415433994"
-                    className="text-rose-700 hover:text-rose-500 text-sm sm:text-base"
+                    className="text-pink-700 hover:text-pink-500 text-sm sm:text-base"
                   >
                     0341 5433994
                   </a>
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-rose-700 mb-2">
+                <h3 className="text-lg font-semibold text-pink-700 mb-2">
                   About Me
                 </h3>
-                <p className="text-rose-700/80 text-sm sm:text-base">
+                <p className="text-pink-700/80 text-sm sm:text-base">
                   I&apos;m Fatima Nazir, a passionate Graphic and UI/UX Designer
                   with a deep love for creating visually appealing and
                   user-centered digital experiences. My journey combines
@@ -280,7 +280,7 @@ export default function UIUXDesignerHeader() {
         />
         <div className="absolute top-24 sm:top-60 right-24 sm:right-60 w-6 sm:w-8 h-6 sm:h-8 rotate-45 bg-pink-500/20 animate-pulse" />
         <div
-          className="absolute bottom-32 sm:bottom-80 left-16 sm:left-60 w-6 h-6 rounded-full bg-rose-600 animate-bounce"
+          className="absolute bottom-32 sm:bottom-80 left-16 sm:left-60 w-6 h-6 rounded-full bg-pink-600 animate-bounce"
           style={{ animationDelay: "0.5s" }}
         />
         <div className="absolute inset-0 opacity-5 hidden md:block">
@@ -305,13 +305,13 @@ export default function UIUXDesignerHeader() {
               className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm text-pink-600 px-3 sm:px-4 py-1 sm:py-2 rounded-full mb-4 sm:mb-6 border border-gray-200"
               style={{ animation: "slideInUp 1s ease-out 0.2s both" }}
             >
-              <Eye className="w-3 sm:w-4 h-3 sm:h-4 text-rose-500" />
+              <Eye className="w-3 sm:w-4 h-3 sm:h-4 text-pin-500" />
               <span className="text-xs sm:text-sm font-medium">
                 Graphic & UI/UX Designer
               </span>
             </div>
             <div
-              className="text-rose-700 text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-3 sm:mb-4"
+              className="text-pink-600 text-base sm:text-lg md:text-xl lg:text-2xl font-medium mb-3 sm:mb-4"
               style={{ animation: "slideInUp 1s ease-out 0.3s both" }}
             >
               I'm a{" "}
@@ -337,10 +337,10 @@ export default function UIUXDesignerHeader() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center"
               style={{ animation: "slideInUp 1s ease-out 0.8s both" }}
             >
-              <button className="bg-rose-600 hover:bg-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-xl justify-center">
+              <button className="bg-pink-600 hover:bg-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-xl justify-center">
                 View My Work <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
               </button>
-              <button className="border-2 border-rose-600 text-rose-600 hover:bg-rose-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 justify-center">
+              <button className="border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 justify-center">
                 <Play className="w-4 sm:w-5 h-4 sm:h-5" />
                 Design Process
               </button>
@@ -372,7 +372,7 @@ export default function UIUXDesignerHeader() {
                 </div>
                 <div className="text-center border-x border-slate-300 px-3 sm:px-4 md:px-6">
                   <div className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-1">
-                    2+
+                    1+
                   </div>
                   <div className="text-slate-500 text-xs sm:text-sm">
                     Years Exp

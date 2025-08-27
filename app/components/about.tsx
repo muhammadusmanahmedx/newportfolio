@@ -30,8 +30,11 @@ export default function AboutUsSection() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+
+
             // Animate stats // [Projects, Satisfaction, Years, Tools]
-            const targetValues = [15, 98, 1, 5];
+            const targetValues = [10, 100, 1, 5];
+            
 
             targetValues.forEach((target, index) => {
               let current = 0;
