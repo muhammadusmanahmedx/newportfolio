@@ -161,7 +161,7 @@ const Portfolio: React.FC<PortfolioSectionProps> = ({
 }) => {
   return (
     <section
-      className={`py-20 px-4 bg-gradient-to-b from-gray-50 to-white ${className}`}
+      className={`py-20 px-4  bg-[#FCE7F3] ${className}`}
       {...props}
     >
       <div className="max-w-7xl mx-auto">
@@ -258,16 +258,16 @@ export const samplePortfolioItems: PortfolioItem[] = [
     link: "#",
     category: "Mobile App",
   },
-  {
-    id: 2,
-    title: "GPS Navigator – Live Maps & Routes",
-    description:
-      "Find the best routes with real-time traffic updates, turn-by-turn voice guidance, and accurate GPS tracking wherever you go.",
-    imageUrl:
-      "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318079/Frame_8_vtzz5y.png",
-    link: "#",
-    category: "Mobile App",
-  },
+  // {
+  //   id: 2,
+  //   title: "GPS Navigator – Live Maps & Routes",
+  //   description:
+  //     "Find the best routes with real-time traffic updates, turn-by-turn voice guidance, and accurate GPS tracking wherever you go.",
+  //   imageUrl:
+  //     "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318079/Frame_8_vtzz5y.png",
+  //   link: "#",
+  //   category: "Mobile App",
+  // },
   {
     id: 3,
     title: "To Do List Mobile App Design",
@@ -278,16 +278,16 @@ export const samplePortfolioItems: PortfolioItem[] = [
     link: "#",
     category: "Mobile App",
   },
-  {
-    id: 4,
-    title: "Universal Language Translator",
-    description:
-      "Instantly translate text, voice, and images across multiple languages with accuracy and ease. Your go-to app for seamless global communication.",
-    imageUrl:
-      "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318078/Frame_10_rc7nku.png",
-    link: "#",
-    category: "Playstore Graphics",
-  },
+  // {
+  //   id: 4,
+  //   title: "Universal Language Translator",
+  //   description:
+  //     "Instantly translate text, voice, and images across multiple languages with accuracy and ease. Your go-to app for seamless global communication.",
+  //   imageUrl:
+  //     "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318078/Frame_10_rc7nku.png",
+  //   link: "#",
+  //   category: "Playstore Graphics",
+  // },
   {
     id: 5,
     title: "Smart GPS Navigation",

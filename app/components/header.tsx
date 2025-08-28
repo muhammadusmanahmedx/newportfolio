@@ -323,18 +323,22 @@ export default function UIUXDesignerHeader() {
               </span>
             </div>
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-slate-800 mb-4 sm:mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-800 mb-4 sm:mb-6 leading-tight"
               style={{ animation: "slideInUp 1s ease-out 0.4s both" }}
             >
-              Bringing Ideas to Life
+             Hi I'm, {" "}
+
+              <span className="block sm:inline text-transparent bg-clip-text bg-pink-500">
+                Fatima Nazir
+              </span>
             </h1>
+           
             <p
               className="text-base sm:text-lg md:text-xl lg:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed"
               style={{ animation: "slideInUp 1s ease-out 0.6s both" }}
             >
-              Currently pursuing Computer Science at Riphah International
-              University, I combine technical foundation with creative vision to
-              craft beautiful digital experiences that users love.
+              Crafting visually stunning and user-friendly digital experiences
+              that leave a lasting impression.
             </p>
             <div
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center"

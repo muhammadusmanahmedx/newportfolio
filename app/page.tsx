@@ -40,12 +40,12 @@ export default function Home() {
       <section id="about-section">
         <AboutUsSection />
       </section>
-         <section id="skills-section">
+         <section id="skills-section" className="bg-[#FCE7F3]">
         <SkillsSection />
         </section>
-      <section id="tech-stack">
+      {/* <section id="tech-stack">
         <OrbitingCirclesDemo />
-      </section>
+      </section> */}
       <section id="services-section">
         <LandingAccordionItem />
       </section>

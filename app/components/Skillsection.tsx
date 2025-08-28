@@ -37,7 +37,7 @@ const SkillsSection = () => {
     <section className="py-16 ">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Heading */}
-        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 to-rose-500 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold text-center mb-12 bg-pink-600 bg-clip-text text-transparent">
           Skills & Expertise
         </h2>
 
