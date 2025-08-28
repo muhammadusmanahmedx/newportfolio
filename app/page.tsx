@@ -1,4 +1,16 @@
-"use client";
+.line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }"use client";
 
 import React from 'react';
 
@@ -95,9 +107,9 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
   const categoryStyle = getCategoryStyle(item.category);
 
   return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 border border-gray-100 h-[580px] w-full flex flex-col">
+    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 border border-gray-100 h-[450px] w-full flex flex-col">
       {/* Image Container - Fixed Height */}
-      <div className="relative h-[300px] w-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-t-2xl flex-shrink-0">
+      <div className="relative h-[240px] w-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-t-2xl flex-shrink-0">
         <div className="absolute inset-0 bg-gradient-to-t from-pink-700/30 via-transparent to-white/10 z-10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2)_0%,transparent_50%)] z-10"></div>
         
@@ -120,21 +132,21 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-full blur-2xl"></div>
       </div>
 
-      {/* Content Container - Flexible Height */}
-      <div className="p-6 flex-1 flex flex-col">
+      {/* Content Container - Compact */}
+      <div className="p-5 flex-1 flex flex-col">
         {/* Dynamic Category Tag */}
-        <div className={`inline-flex items-center px-3 py-1 ${categoryStyle.bg} ${categoryStyle.text} rounded-full text-xs font-semibold uppercase tracking-wide mb-4 w-fit`}>
+        <div className={`inline-flex items-center px-3 py-1 ${categoryStyle.bg} ${categoryStyle.text} rounded-full text-xs font-semibold uppercase tracking-wide mb-3 w-fit`}>
           <span className={`w-1.5 h-1.5 ${categoryStyle.dot} rounded-full mr-2`}></span>
           {item.category}
         </div>
 
-        {/* Title - Auto Height */}
-        <h3 className="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-500 leading-tight mb-3">
+        {/* Title - Compact */}
+        <h3 className="text-lg font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-500 leading-tight mb-2 line-clamp-2">
           {item.title}
         </h3>
 
-        {/* Enhanced Description - Flexible */}
-        <p className="text-gray-600 text-sm leading-relaxed flex-1">
+        {/* Description - Compact */}
+        <p className="text-gray-600 text-sm leading-relaxed flex-1 line-clamp-3">
           {item.description}
         </p>
       </div>
