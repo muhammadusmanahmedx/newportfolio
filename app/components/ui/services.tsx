@@ -120,7 +120,7 @@ export function LandingAccordionItem() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-100 font-sans">
+    <div className="min-h-screen bg-white font-sans">
       <section className="container mx-auto px-4 py-8 sm:py-12 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left Side: Text Content */}

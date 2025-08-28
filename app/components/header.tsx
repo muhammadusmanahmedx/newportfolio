@@ -173,6 +173,8 @@ export default function UIUXDesignerHeader() {
           </div>
         )}
       </nav>
+
+    {/* side bar */}
       {isSidebarOpen && (
         <div className="fixed inset-0 z-50 flex flex-col sm:flex-row sm:justify-end">
           <div
