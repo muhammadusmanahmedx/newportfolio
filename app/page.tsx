@@ -24,38 +24,38 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Mobile App UI/UX Designs",
+      title: "Universal Language Translator",
       description:
-        "Screens of mobile app interfaces and prototypes - Coming Soon",
+        "Instantly translate text, voice, and images across multiple languages with accuracy and ease. Your go-to app for seamless global communication.",
       imageUrl:
-        "https://images.unsplash.com/photo-1600585154495-3b9e6a716f8a?auto=format&fit=crop&w=1350&q=80",
+        "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318078/Frame_10_rc7nku.png",
       link: "#",
     },
     {
       id: 3,
-      title: "Branding & Graphic Design",
+      title: "Smart Weather Forecast",
       description:
-        "Logos, posters, brand kits, and marketing graphics - Coming Soon",
+        "Get real-time weather updates, accurate forecasts, and personalized alerts to stay prepared anytime, anywhere.",
       imageUrl:
-        "https://images.unsplash.com/photo-1600585154526-990d71ebb710?auto=format&fit=crop&w=1350&q=80",
+        "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756351800/WhatsApp_Image_2025-08-27_at_12.39.52_PM_bdfc55.jpg",
       link: "#",
     },
     {
       id: 4,
-      title: "Creative Experiments",
+      title: "Smart GPS Navigation",
       description:
-        "Personal projects, concept art, and visual explorations - Coming Soon",
+        "Explore the fastest routes with live traffic updates, voice guidance, and real-time GPS tracking for a smooth and reliable journey.",
       imageUrl:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
+        "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756351799/WhatsApp_Image_2025-08-27_at_12.39.52_PM_1_lrhlln.jpg",
       link: "#",
     },
     {
       id: 5,
-      title: "To Do List Mobile App Design",
+      title: "GPS Navigator – Live Maps & Routes",
       description:
-        "A clean and intuitive mobile app design for managing tasks with ease and productivity",
+        "Find the best routes with real-time traffic updates, turn-by-turn voice guidance, and accurate GPS tracking wherever you go.",
       imageUrl:
-        "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
+        "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318079/Frame_8_vtzz5y.png",
       link: "#",
     },
   ];
