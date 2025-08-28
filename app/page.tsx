@@ -95,16 +95,20 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
   const categoryStyle = getCategoryStyle(item.category);
 
   return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 border border-gray-100 h-[520px] w-full flex flex-col">
+    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 border border-gray-100 h-[580px] w-full flex flex-col">
       {/* Image Container - Fixed Height */}
-      <div className="relative h-[280px] w-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-t-2xl flex-shrink-0">
+      <div className="relative h-[300px] w-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-t-2xl flex-shrink-0">
         <div className="absolute inset-0 bg-gradient-to-t from-pink-700/30 via-transparent to-white/10 z-10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2)_0%,transparent_50%)] z-10"></div>
         
         <img
           src={item.imageUrl}
           alt={item.title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 drop-shadow-lg"
+          className={`w-full h-full ${
+            item.category.toLowerCase() === 'playstore graphics' 
+              ? 'object-contain p-4' 
+              : 'object-cover'
+          } group-hover:scale-110 transition-all duration-700 drop-shadow-lg`}
         />
         
         {/* Enhanced Floating Elements */}
@@ -116,23 +120,21 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-full blur-2xl"></div>
       </div>
 
-      {/* Content Container - Fixed Height with Flex */}
-      <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
-        <div className="space-y-3">
-          {/* Dynamic Category Tag */}
-          <div className={`inline-flex items-center px-3 py-1 ${categoryStyle.bg} ${categoryStyle.text} rounded-full text-xs font-semibold uppercase tracking-wide`}>
-            <span className={`w-1.5 h-1.5 ${categoryStyle.dot} rounded-full mr-2`}></span>
-            {item.category}
-          </div>
-
-          {/* Title with Fixed Height */}
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-500 leading-tight line-clamp-2 h-[56px] flex items-center">
-            {item.title}
-          </h3>
+      {/* Content Container - Flexible Height */}
+      <div className="p-6 flex-1 flex flex-col">
+        {/* Dynamic Category Tag */}
+        <div className={`inline-flex items-center px-3 py-1 ${categoryStyle.bg} ${categoryStyle.text} rounded-full text-xs font-semibold uppercase tracking-wide mb-4 w-fit`}>
+          <span className={`w-1.5 h-1.5 ${categoryStyle.dot} rounded-full mr-2`}></span>
+          {item.category}
         </div>
 
-        {/* Enhanced Description - Fixed Height */}
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 h-[60px] overflow-hidden">
+        {/* Title - Auto Height */}
+        <h3 className="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-500 leading-tight mb-3">
+          {item.title}
+        </h3>
+
+        {/* Enhanced Description - Flexible */}
+        <p className="text-gray-600 text-sm leading-relaxed flex-1">
           {item.description}
         </p>
       </div>
@@ -203,19 +205,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ items }) => {
           animation: fadeInUp 0.6s ease-out;
         }
         
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        
-        .line-clamp-3 {
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
+
       `}</style>
     </section>
   );
