@@ -105,17 +105,19 @@ export function Footer({
 
           {/* Copyright */}
           <div className="text-center lg:text-left text-sm sm:text-base leading-6 text-[#831843]/70 whitespace-nowrap lg:row-[1/3] lg:col-[1/4] space-y-1">
-            <div>{copyright.text}</div>
-            {copyright.license && <div>{copyright.license}</div>}
+            {/* <div>{copyright.text}</div>
+            {copyright.license && <div>{copyright.license}</div>} */}
             <div>
+               <div>{copyright.text}</div>
+            {copyright.license && <div>{copyright.license}</div>}
               Credit:{" "}
               <a
-                href="https://wonsol.com"
+               
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#BE185D] hover:text-[#9D174D] font-medium transition-colors"
               >
-                Won Solutions
+                Made by Fatima Nazir
               </a>
             </div>
           </div>
