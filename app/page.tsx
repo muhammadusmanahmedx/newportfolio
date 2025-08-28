@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -78,7 +77,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
           text: 'text-blue-600',
           dot: 'bg-blue-400'
         };
-      case 'graphics':
+      case 'playstore graphics':
         return {
           bg: 'bg-purple-50',
           text: 'text-purple-600',
@@ -96,16 +95,16 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
   const categoryStyle = getCategoryStyle(item.category);
 
   return (
-    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 border border-gray-100">
-      {/* Image Container with Enhanced Gradient */}
-      <div className="relative h-72 w-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-t-2xl">
+    <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 transform hover:-translate-y-3 border border-gray-100 h-[520px] w-full flex flex-col">
+      {/* Image Container - Fixed Height */}
+      <div className="relative h-[280px] w-full overflow-hidden bg-gradient-to-br from-pink-400 via-pink-500 to-pink-600 rounded-t-2xl flex-shrink-0">
         <div className="absolute inset-0 bg-gradient-to-t from-pink-700/30 via-transparent to-white/10 z-10"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2)_0%,transparent_50%)] z-10"></div>
         
         <img
           src={item.imageUrl}
           alt={item.title}
-          className="w-full h-full object-contain p-6 group-hover:scale-110 transition-all duration-700 drop-shadow-lg"
+          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700 drop-shadow-lg"
         />
         
         {/* Enhanced Floating Elements */}
@@ -117,21 +116,23 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-white/20 to-transparent rounded-full blur-2xl"></div>
       </div>
 
-      {/* Content Container with Better Spacing */}
-      <div className="p-8 space-y-5">
-        {/* Dynamic Category Tag */}
-        <div className={`inline-flex items-center px-3 py-1 ${categoryStyle.bg} ${categoryStyle.text} rounded-full text-xs font-semibold uppercase tracking-wide`}>
-          <span className={`w-1.5 h-1.5 ${categoryStyle.dot} rounded-full mr-2`}></span>
-          {item.category}
+      {/* Content Container - Fixed Height with Flex */}
+      <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+        <div className="space-y-3">
+          {/* Dynamic Category Tag */}
+          <div className={`inline-flex items-center px-3 py-1 ${categoryStyle.bg} ${categoryStyle.text} rounded-full text-xs font-semibold uppercase tracking-wide`}>
+            <span className={`w-1.5 h-1.5 ${categoryStyle.dot} rounded-full mr-2`}></span>
+            {item.category}
+          </div>
+
+          {/* Title with Fixed Height */}
+          <h3 className="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-500 leading-tight line-clamp-2 h-[56px] flex items-center">
+            {item.title}
+          </h3>
         </div>
 
-        {/* Title with Better Typography */}
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-500 leading-tight">
-          {item.title}
-        </h3>
-
-        {/* Enhanced Description */}
-        <p className="text-gray-600 text-base leading-relaxed line-clamp-4 font-light">
+        {/* Enhanced Description - Fixed Height */}
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 h-[60px] overflow-hidden">
           {item.description}
         </p>
       </div>
@@ -170,7 +171,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ items }) => {
         </div>
 
         {/* Portfolio Grid with Better Spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {items.map((item, index) => (
             <div
               key={item.id}
@@ -184,8 +185,6 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ items }) => {
             </div>
           ))}
         </div>
-
-
       </div>
 
       <style jsx>{`
@@ -202,6 +201,13 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ items }) => {
         
         .animate-fadeInUp {
           animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
         
         .line-clamp-3 {
