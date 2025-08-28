@@ -12,53 +12,7 @@ import OrbitingCirclesDemo from "./components/techstack";
 import ContactForm from "./components/Contactform";
 
 export default function Home() {
-  const portfolioItems: PortfolioItem[] = [
-    {
-      id: 1,
-      title: "To Do List Mobile App Design",
-      description:
-        "A clean and intuitive mobile app design for managing tasks with ease and productivity",
-      imageUrl:
-        "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Mobile App UI/UX Designs",
-      description:
-        "Screens of mobile app interfaces and prototypes - Coming Soon",
-      imageUrl:
-        "https://images.unsplash.com/photo-1600585154495-3b9e6a716f8a?auto=format&fit=crop&w=1350&q=80",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Branding & Graphic Design",
-      description:
-        "Logos, posters, brand kits, and marketing graphics - Coming Soon",
-      imageUrl:
-        "https://images.unsplash.com/photo-1600585154526-990d71ebb710?auto=format&fit=crop&w=1350&q=80",
-      link: "#",
-    },
-    {
-      id: 4,
-      title: "Creative Experiments",
-      description:
-        "Personal projects, concept art, and visual explorations - Coming Soon",
-      imageUrl:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80",
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "To Do List Mobile App Design",
-      description:
-        "A clean and intuitive mobile app design for managing tasks with ease and productivity",
-      imageUrl:
-        "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
-      link: "#",
-    },
-  ];
+ 
 
   return (
     <>
@@ -75,7 +29,7 @@ export default function Home() {
         <LandingAccordionItem />
       </section>
       <section id="portfolio-section">
-        <PortfolioSection items={portfolioItems} />
+        <PortfolioSection  />
       </section>
       <section id="contact">
         <ContactForm />
