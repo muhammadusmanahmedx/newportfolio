@@ -7,13 +7,13 @@ import AboutUsSection from "./components/about";
 import DesignWebsiteHeader from "./components/header";
 import { Footer } from "./components/footer";
 import { Linkedin } from "lucide-react";
-import { PortfolioSection, PortfolioItem } from "./components/portfolio";
+// import { PortfolioSection} from "./components/portfolio";
+
 import OrbitingCirclesDemo from "./components/techstack";
 import ContactForm from "./components/Contactform";
+import { PortfolioDemo } from "./components/portfolio";
 
 export default function Home() {
- 
-
   return (
     <>
       <section id="home">
@@ -29,7 +29,7 @@ export default function Home() {
         <LandingAccordionItem />
       </section>
       <section id="portfolio-section">
-        <PortfolioSection  />
+        <PortfolioDemo />
       </section>
       <section id="contact">
         <ContactForm />
