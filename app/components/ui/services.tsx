@@ -27,6 +27,8 @@ const accordionItems = [
     imageUrl:
       "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=2090&auto=format&fit=crop",
   },
+
+  
 ];
 
 // --- Accordion Item Component ---

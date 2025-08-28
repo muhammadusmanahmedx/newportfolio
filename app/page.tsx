@@ -1,19 +1,36 @@
 "use client";
 import Image from "next/image";
-import { LandingAccordionItem } from "./components/ui/services";
-// import LandingAccordionItem from "./components/ui/services";
-// import { RevealImageList } from "./components/ui/revealimg";
-import AboutUsSection from "./components/about";
-import DesignWebsiteHeader from "./components/header";
-import { Footer } from "./components/footer";
-import { Linkedin } from "lucide-react";
-// import { PortfolioSection} from "./components/portfolio";
 
+
+// Services section => ctrl + Click (landingaccordinitem)
+import { LandingAccordionItem } from "./components/ui/services";
+
+// About us section => ctrl + Click (aboutussection)
+import AboutUsSection from "./components/about";
+
+// header and hero => ctrl + Click (designwebsiteheader)
+import DesignWebsiteHeader from "./components/header";
+
+// Footer
+import { Footer } from "./components/footer";
+
+// Tech stack section
 import OrbitingCirclesDemo from "./components/techstack";
+
+// Contact form
 import ContactForm from "./components/Contactform";
+
+// Portfolio section
 import { PortfolioDemo } from "./components/portfolio";
+
+// Skills section
 import SkillsSection from "./components/Skillsection";
 
+
+
+// yaha se upar rehna
+
+import { Linkedin } from "lucide-react";
 export default function Home() {
   return (
     <>
@@ -23,12 +40,12 @@ export default function Home() {
       <section id="about-section">
         <AboutUsSection />
       </section>
-      <section id="tech-stack">
-        <OrbitingCirclesDemo />
-      </section>
          <section id="skills-section">
         <SkillsSection />
         </section>
+      <section id="tech-stack">
+        <OrbitingCirclesDemo />
+      </section>
       <section id="services-section">
         <LandingAccordionItem />
       </section>
@@ -44,6 +61,7 @@ export default function Home() {
         <Footer
           logo={
             <img
+            // footers logo image
               src="https://res.cloudinary.com/dshjm6hcx/image/upload/v1755711503/depositphotos_65122799-stock-illustration-letter-f-wing-flag-logo_jtvub3.png"
               alt="Fatima Logo"
               className="h-8 w-auto"

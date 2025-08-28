@@ -25,6 +25,7 @@ export default function UIUXDesignerHeader() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [typedText, setTypedText] = useState("");
 
+  // hero typed text animation
   const typedWords = [
     "UI/UX Designer",
     "Graphic Designer",

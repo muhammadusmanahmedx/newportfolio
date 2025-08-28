@@ -120,6 +120,7 @@ export default function AboutUsSection() {
       description:
         "I also run my own nail studio business, which has given me valuable insights into entrepreneurship and customer experience design.",
     },
+    
   ];
 
   const stats = [
