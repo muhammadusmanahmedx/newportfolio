@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { LandingAccordionItem } from "./components/ui/services";
 // import LandingAccordionItem from "./components/ui/services";
-import { RevealImageList } from "./components/ui/revealimg";
+// import { RevealImageList } from "./components/ui/revealimg";
 import AboutUsSection from "./components/about";
 import DesignWebsiteHeader from "./components/header";
 import { Footer } from "./components/footer";
@@ -12,6 +12,7 @@ import { Linkedin } from "lucide-react";
 import OrbitingCirclesDemo from "./components/techstack";
 import ContactForm from "./components/Contactform";
 import { PortfolioDemo } from "./components/portfolio";
+import SkillsSection from "./components/Skillsection";
 
 export default function Home() {
   return (
@@ -25,9 +26,13 @@ export default function Home() {
       <section id="tech-stack">
         <OrbitingCirclesDemo />
       </section>
+         <section id="skills-section">
+        <SkillsSection />
+        </section>
       <section id="services-section">
         <LandingAccordionItem />
       </section>
+   
       <section id="portfolio-section">
         <PortfolioDemo />
       </section>
