@@ -248,6 +248,16 @@ export default Portfolio;
 
 // Sample data for demonstration
 export const samplePortfolioItems: PortfolioItem[] = [
+   {
+    id: 6,
+    title: "Food Delivery App",
+    description:
+      "Designed a user-friendly mobile app interface for browsing restaurants, tracking orders, and seamless food delivery experience.",
+    imageUrl:
+      "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756912561/WhatsApp_Image_2025-09-03_at_6.27.21_PM_savcjk.jpg",
+    link: "#",
+    category: "Mobile App",
+  },
   {
     id: 1,
     title: "Smart Weather Forecast",
@@ -298,16 +308,7 @@ export const samplePortfolioItems: PortfolioItem[] = [
     link: "#",
     category: "Playstore Graphics",
   },
-  {
-    id: 6,
-    title: "Food Delivery App",
-    description:
-      "Designed a user-friendly mobile app interface for browsing restaurants, tracking orders, and seamless food delivery experience.",
-    imageUrl:
-      "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756912561/WhatsApp_Image_2025-09-03_at_6.27.21_PM_savcjk.jpg",
-    link: "#",
-    category: "Mobile App",
-  },
+ 
 ];
 
 // Demo component showing usage
