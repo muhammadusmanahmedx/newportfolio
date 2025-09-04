@@ -27,8 +27,6 @@ const accordionItems = [
     imageUrl:
       "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=2090&auto=format&fit=crop",
   },
-
-  
 ];
 
 // --- Accordion Item Component ---
@@ -50,13 +48,13 @@ const AccordionItem = ({
         transition-all duration-700 ease-in-out
         rounded-2xl group
         
-        /* Mobile: Stack vertically with equal heights */
+        /* Mobile: Stack vertically */
         h-[160px] w-full mb-3 last:mb-0
         
-        /* Tablet: Horizontal layout starts */
+        /* Tablet */
         sm:h-[220px] sm:mb-2
         
-        /* Desktop: Full accordion behavior */
+        /* Desktop: accordion behavior */
         lg:h-[400px] lg:mb-0
         ${isActive ? "lg:w-[350px] xl:w-[400px]" : "lg:w-[60px] xl:w-[70px]"}
         
@@ -79,29 +77,18 @@ const AccordionItem = ({
         }}
       />
 
-      {/* Overlay gradient - more prominent on mobile */}
+      {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-pink-900/80 via-pink-500/30 to-transparent lg:from-pink-900/60 lg:via-pink-500/20"></div>
 
-      {/* Caption Text - Responsive positioning */}
+      {/* Caption Text - FIXED position (no shifting) */}
       <span
-        className={`
-          absolute text-white font-semibold whitespace-nowrap
-          transition-all duration-500 ease-in-out drop-shadow-lg
-          
-          /* Mobile: Always horizontal at bottom */
-          text-base bottom-4 left-1/2 -translate-x-1/2 rotate-0
-          
-          /* Tablet: Larger text */
-          sm:text-lg sm:bottom-5
-          
-          /* Desktop: Conditional rotation and positioning */
-          lg:text-xl
-          ${
-            isActive
-              ? "lg:bottom-6 lg:left-1/2 lg:-translate-x-1/2 lg:rotate-0"
-              : "lg:bottom-32 lg:left-1/2 lg:-translate-x-1/2 lg:rotate-90 lg:origin-center"
-          }
-        `}
+        className="
+          absolute bottom-6 inset-x-0
+          text-center text-white font-semibold whitespace-nowrap
+          drop-shadow-lg transition-opacity duration-500 ease-in-out
+          text-base sm:text-lg lg:text-xl
+          pointer-events-none
+        "
       >
         {item.title}
       </span>
@@ -109,7 +96,7 @@ const AccordionItem = ({
   );
 };
 
-// --- Main App Component ---
+// --- Main Component ---
 export function LandingAccordionItem() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -122,13 +109,14 @@ export function LandingAccordionItem() {
   };
 
   return (
-    <div className="min-h-screen  bg-[#FCE7F3] font-sans">
-      <section className="container mx-auto px-4 py-8 sm:py-12 lg:py-24">
+    <div className="min-h-screen bg-[#FCE7F3] font-sans">
+      {/* ✅ Increased side margins */}
+      <section className="container mx-auto px-8 sm:px-14 lg:px-24 py-8 sm:py-12 lg:py-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           {/* Left Side: Text Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight tracking-tighter">
-              Transform Your Business with
+              Transform with Our
               <span className="block sm:inline text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
                 {" "}
                 Premium Services
@@ -148,9 +136,9 @@ export function LandingAccordionItem() {
             </div>
           </div>
 
-          {/* Right Side: Image Accordion */}
+          {/* Right Side: Accordion */}
           <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-            {/* Mobile/Tablet: Vertical Stack */}
+            {/* Mobile/Tablet */}
             <div className="block lg:hidden">
               <div className="space-y-0">
                 {accordionItems.map((item, index) => (
@@ -165,7 +153,7 @@ export function LandingAccordionItem() {
               </div>
             </div>
 
-            {/* Desktop: Horizontal Accordion */}
+            {/* Desktop */}
             <div className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 p-4">
               {accordionItems.map((item, index) => (
                 <AccordionItem
@@ -179,24 +167,6 @@ export function LandingAccordionItem() {
             </div>
           </div>
         </div>
-
-        {/* Optional: Service indicators for mobile */}
-        {/* <div className="flex justify-center mt-6 lg:hidden">
-          <div className="flex space-x-2">
-            {accordionItems.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleItemClick(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex
-                    ? "bg-pink-500 w-4"
-                    : "bg-pink-200 hover:bg-pink-300"
-                }`}
-                aria-label={`View service ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div> */}
       </section>
     </div>
   );

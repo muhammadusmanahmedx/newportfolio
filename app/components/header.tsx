@@ -344,13 +344,19 @@ export default function UIUXDesignerHeader() {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center"
               style={{ animation: "slideInUp 1s ease-out 0.8s both" }}
             >
-              <button className="bg-pink-600 hover:bg-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-xl justify-center">
-                View My Work <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
-              </button>
-              <button className="border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 justify-center">
+            <button
+  onClick={() => {
+    document.getElementById("portfolio-section")?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="bg-pink-600 hover:bg-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-xl justify-center"
+>
+  View My Work <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
+</button>
+
+              {/* <button className="border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold transition-all duration-300 hover:scale-105 justify-center">
                 <Play className="w-4 sm:w-5 h-4 sm:h-5" />
                 Design Process
-              </button>
+              </button> */}
             </div>
             <div
               className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 items-center justify-center mb-12 sm:mb-16"

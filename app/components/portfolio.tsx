@@ -1,6 +1,5 @@
 "use client";
-
-import React from "react";
+import React, { useState, useMemo } from "react";
 
 // Portfolio item interface
 export interface PortfolioItem {
@@ -27,40 +26,35 @@ interface PortfolioCardProps {
   onClick?: (item: PortfolioItem) => void;
 }
 
+// Category filter interface
+interface CategoryFilter {
+  name: string;
+  value: string;
+  icon: string;
+}
+
 // Portfolio Card Component
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ item, onClick }) => {
   // Dynamic category styling
   const getCategoryStyle = (category: string) => {
     switch (category.toLowerCase()) {
-      case "mobile app":
+      case "mobile app designs":
         return {
           bg: "bg-pink-50",
           text: "text-pink-600",
           dot: "bg-pink-400",
         };
-      case "web design":
+      case "website designs":
         return {
-          bg: "bg-blue-50",
-          text: "text-blue-600",
-          dot: "bg-blue-400",
+          bg: "bg-pink-100",
+          text: "text-pink-700",
+          dot: "bg-pink-500",
         };
-      case "playstore graphics":
+      case "posts design":
         return {
-          bg: "bg-purple-50",
-          text: "text-purple-600",
-          dot: "bg-purple-400",
-        };
-      case "graphics":
-        return {
-          bg: "bg-green-50",
-          text: "text-green-600",
-          dot: "bg-green-400",
-        };
-      case "ui/ux":
-        return {
-          bg: "bg-orange-50",
-          text: "text-orange-600",
-          dot: "bg-orange-400",
+          bg: "bg-pink-200",
+          text: "text-pink-800",
+          dot: "bg-pink-600",
         };
       default:
         return {
@@ -95,7 +89,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item, onClick }) => {
           src={item.imageUrl}
           alt={item.title}
           className={`w-full h-full ${
-            item.category.toLowerCase().includes("graphics")
+            item.category.toLowerCase().includes("posts")
               ? "object-contain p-4"
               : "object-cover"
           } group-hover:scale-110 transition-all duration-700 drop-shadow-lg`}
@@ -145,8 +139,46 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item, onClick }) => {
 
       {/* Enhanced Decorative Elements */}
       <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-pink-300/20 via-pink-400/10 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-      <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-tr from-purple-300/15 via-pink-300/10 to-transparent rounded-full blur-xl group-hover:scale-125 transition-transform duration-700"></div>
+      <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-tr from-pink-200/15 via-pink-300/10 to-transparent rounded-full blur-xl group-hover:scale-125 transition-transform duration-700"></div>
     </div>
+  );
+};
+
+// Category Filter Button Component
+const CategoryButton: React.FC<{
+  category: CategoryFilter;
+  isActive: boolean;
+  onClick: (value: string) => void;
+  count: number;
+}> = ({ category, isActive, onClick, count }) => {
+  return (
+    <button
+      onClick={() => onClick(category.value)}
+      className={`relative group px-6 py-3 rounded-full transition-all duration-500 font-medium text-sm tracking-wide ${
+        isActive
+          ? "bg-gradient-to-r from-pink-500 to-pink-700 text-white shadow-lg transform scale-105"
+          : "bg-white/80 backdrop-blur-sm text-gray-600 hover:text-pink-600 hover:bg-white shadow-sm hover:shadow-md hover:scale-105 border border-gray-200"
+      }`}
+    >
+      <span className="flex items-center gap-2">
+        <span className="text-lg">{category.icon}</span>
+        <span>{category.name}</span>
+        <span
+          className={`px-2 py-0.5 rounded-full text-xs ${
+            isActive
+              ? "bg-white/20 text-white"
+              : "bg-gray-100 text-gray-500 group-hover:bg-pink-100 group-hover:text-pink-600"
+          }`}
+        >
+          {count}
+        </span>
+      </span>
+
+      {/* Active indicator */}
+      {isActive && (
+        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rounded-full"></div>
+      )}
+    </button>
   );
 };
 
@@ -159,14 +191,43 @@ const Portfolio: React.FC<PortfolioSectionProps> = ({
   className = "",
   ...props
 }) => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  // Define category filters
+  const categoryFilters: CategoryFilter[] = [
+    { name: "Website Designs", value: "website designs", icon: "🌐" },
+    { name: "Mobile App Designs", value: "mobile app designs", icon: "📱" },
+    { name: "Posts Design", value: "posts design", icon: "🎨" },
+  ];
+
+  // Get unique categories from items and count projects
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    items.forEach((item) => {
+      const category = item.category.toLowerCase();
+      counts[category] = (counts[category] || 0) + 1;
+    });
+    return counts;
+  }, [items]);
+
+  // Filter items based on active category
+  const filteredItems = useMemo(() => {
+    if (!activeCategory) {
+      return [];
+    }
+    return items.filter(
+      (item) => item.category.toLowerCase() === activeCategory.toLowerCase()
+    );
+  }, [items, activeCategory]);
+
   return (
     <section
-      className={`py-20 px-4  bg-[#FCE7F3] ${className}`}
+      className={`py-20 px-4 bg-gradient-to-br from-pink-50 via-pink-100 to-pink-200 ${className}`}
       {...props}
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-16 space-y-6">
           <div className="inline-flex items-center px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm font-medium mb-4">
             <span className="w-2 h-2 bg-pink-500 rounded-full mr-2 animate-pulse"></span>
             {subtitle}
@@ -175,12 +236,12 @@ const Portfolio: React.FC<PortfolioSectionProps> = ({
             {title.includes(" ") ? (
               <>
                 {title.split(" ").slice(0, -1).join(" ")}
-                <span className="bg-pink-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-pink-500 to-pink-700 bg-clip-text text-transparent">
                   {" " + title.split(" ").slice(-1)[0]}
                 </span>
               </>
             ) : (
-              <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-pink-500 to-pink-700 bg-clip-text text-transparent">
                 {title}
               </span>
             )}
@@ -192,21 +253,63 @@ const Portfolio: React.FC<PortfolioSectionProps> = ({
           )}
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {items.map((item, index) => (
-            <div
-              key={item.id}
-              className="animate-fadeInUp"
-              style={{
-                animationDelay: `${index * 200}ms`,
-                animationFillMode: "both",
-              }}
-            >
-              <PortfolioCard item={item} />
-            </div>
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categoryFilters.map((category) => (
+            <CategoryButton
+              key={category.value}
+              category={category}
+              isActive={activeCategory === category.value}
+              onClick={setActiveCategory}
+              count={categoryCounts[category.value] || 0}
+            />
           ))}
         </div>
+
+        {/* Portfolio Grid */}
+        {activeCategory ? (
+          filteredItems.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {filteredItems.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="animate-fadeInUp"
+                  style={{
+                    animationDelay: `${index * 200}ms`,
+                    animationFillMode: "both",
+                  }}
+                >
+                  <PortfolioCard item={item} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-3xl text-gray-400">📁</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                No Designs Found
+              </h3>
+              <p className="text-gray-600">
+                No Designs available in this category yet.
+              </p>
+            </div>
+          )
+        ) : (
+          <div className="text-center py-16">
+            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-pink-100 to-pink-200 rounded-full flex items-center justify-center">
+              <span className="text-3xl">✨</span>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Choose a Category
+            </h3>
+            <p className="text-gray-600 text-lg max-w-md mx-auto">
+              Select a category above to explore our amazing projects and
+              creative work.
+            </p>
+          </div>
+        )}
       </div>
 
       <style jsx>{`
@@ -243,12 +346,45 @@ const Portfolio: React.FC<PortfolioSectionProps> = ({
   );
 };
 
-// Export the main component as default
+// Export the main component as default export
 export default Portfolio;
 
 // Sample data for demonstration
 export const samplePortfolioItems: PortfolioItem[] = [
-   {
+  // Website Designs
+  // {
+  //   id: 1,
+  //   title: "Modern E-commerce Platform",
+  //   description:
+  //     "A sleek and responsive e-commerce website with advanced filtering, smooth animations, and optimized checkout process.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+  //   link: "#",
+  //   category: "Website Designs",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Creative Portfolio Website",
+  //   description:
+  //     "An innovative portfolio website showcasing creative work with interactive elements and stunning visual effects.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+  //   link: "#",
+  //   category: "Website Designs",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Corporate Business Site",
+  //   description:
+  //     "Professional corporate website with clean design, fast performance, and comprehensive business solutions.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1486312338219-ce68e2c6b6c8?w=800&h=600&fit=crop",
+  //   link: "#",
+  //   category: "Website Designs",
+  // },
+
+  // Mobile App Designs
+    {
     id: 6,
     title: "Food Delivery App",
     description:
@@ -256,59 +392,63 @@ export const samplePortfolioItems: PortfolioItem[] = [
     imageUrl:
       "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756912561/WhatsApp_Image_2025-09-03_at_6.27.21_PM_savcjk.jpg",
     link: "#",
-    category: "Mobile App",
+    category: "Mobile App Designs",
   },
+  
   {
-    id: 1,
+    id: 4,
     title: "Smart Weather Forecast",
     description:
       "Get real-time weather updates, accurate forecasts, and personalized alerts to stay prepared anytime, anywhere.",
     imageUrl:
       "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756351800/WhatsApp_Image_2025-08-27_at_12.39.52_PM_bdfc55.jpg",
     link: "#",
-    category: "Mobile App",
+    category: "Mobile App Designs",
   },
-  // {
-  //   id: 2,
-  //   title: "GPS Navigator – Live Maps & Routes",
-  //   description:
-  //     "Find the best routes with real-time traffic updates, turn-by-turn voice guidance, and accurate GPS tracking wherever you go.",
-  //   imageUrl:
-  //     "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318079/Frame_8_vtzz5y.png",
-  //   link: "#",
-  //   category: "Mobile App",
-  // },
   {
-    id: 3,
+    id: 5,
     title: "To Do List Mobile App Design",
     description:
       "A clean and intuitive mobile app design for managing tasks with ease and productivity",
     imageUrl:
       "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
     link: "#",
-    category: "Mobile App",
+    category: "Mobile App Designs",
   },
-  // {
-  //   id: 4,
-  //   title: "Universal Language Translator",
-  //   description:
-  //     "Instantly translate text, voice, and images across multiple languages with accuracy and ease. Your go-to app for seamless global communication.",
-  //   imageUrl:
-  //     "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756318078/Frame_10_rc7nku.png",
-  //   link: "#",
-  //   category: "Playstore Graphics",
-  // },
-  {
-    id: 5,
-    title: "Smart GPS Navigation",
-    description:
-      "Explore the fastest routes with live traffic updates, voice guidance, and real-time GPS tracking for a smooth and reliable journey.",
-    imageUrl:
-      "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756351799/WhatsApp_Image_2025-08-27_at_12.39.52_PM_1_lrhlln.jpg",
-    link: "#",
-    category: "Playstore Graphics",
-  },
+
  
+
+  // Posts Design
+  // {
+  //   id: 7,
+  //   title: "Social Media Campaign Posts",
+  //   description:
+  //     "Engaging social media post designs with vibrant colors and compelling call-to-actions for maximum engagement.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+  //   link: "#",
+  //   category: "Posts Design",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Brand Promotional Graphics",
+  //   description:
+  //     "Eye-catching promotional graphics designed to boost brand awareness and drive conversions across platforms.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop",
+  //   link: "#",
+  //   category: "Posts Design",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Event Announcement Designs",
+  //   description:
+  //     "Professional event announcement posts with modern typography and compelling visual hierarchy.",
+  //   imageUrl:
+  //     "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
+  //   link: "#",
+  //   category: "Posts Design",
+  // },
 ];
 
 // Demo component showing usage
