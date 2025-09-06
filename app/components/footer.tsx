@@ -117,7 +117,7 @@ export function Footer({
                 rel="noopener noreferrer"
                 className="text-[#BE185D] hover:text-[#9D174D] font-medium transition-colors"
               >
-                Made by Fatima Nazir
+                Made by Won Solutions (wonsol.com)
               </a>
             </div>
           </div>
