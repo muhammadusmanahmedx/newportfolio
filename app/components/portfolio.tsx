@@ -436,7 +436,7 @@ export const samplePortfolioItems: PortfolioItem[] = [
   //     "Eye-catching promotional graphics designed to boost brand awareness and drive conversions across platforms.",
   //   imageUrl:
   //     "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop",
-  //   link: "#",
+  //   link: "#",hkj
   //   category: "Posts Design",
   // },
   // {
