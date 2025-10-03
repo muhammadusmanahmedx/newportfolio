@@ -85,7 +85,7 @@ export default function Home() {
             { href: "/terms", label: "Terms of Service" },
           ]}
           copyright={{
-            text: "© 2024 wonsol.com . All rights reserved.",
+            text: "© 2024 Fatima Nazir . All rights reserved.",
           }}
         />
       </section>
