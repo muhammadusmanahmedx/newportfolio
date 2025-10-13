@@ -17,6 +17,14 @@ const SkillsSection = () => {
       "Adobe Illustrator",
       "Sketch",
     ],
+    "📱 React Native Front-end": [
+      "React Native",
+      "Expo",
+      "React Navigation",
+      "Native Modules (iOS/Android)",
+      "Performance Optimization",
+  
+    ],
     "📈 Digital Marketing": [
       "ASO",
       "Social Media Marketing",

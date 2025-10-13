@@ -50,11 +50,11 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ item, onClick }) => {
           text: "text-pink-700",
           dot: "bg-pink-500",
         };
-      case "posts design":
+      case "react native front-end":
         return {
-          bg: "bg-pink-200",
-          text: "text-pink-800",
-          dot: "bg-pink-600",
+          bg: "bg-emerald-50",
+          text: "text-emerald-700",
+          dot: "bg-emerald-500",
         };
       default:
         return {
@@ -191,13 +191,16 @@ const Portfolio: React.FC<PortfolioSectionProps> = ({
   className = "",
   ...props
 }) => {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  // Default to Mobile App Designs as requested
+  const [activeCategory, setActiveCategory] = useState<string | null>(
+    "mobile app designs"
+  );
 
   // Define category filters
   const categoryFilters: CategoryFilter[] = [
     { name: "Website Designs", value: "website designs", icon: "🌐" },
     { name: "Mobile App Designs", value: "mobile app designs", icon: "📱" },
-    { name: "Posts Design", value: "posts design", icon: "🎨" },
+    { name: "React Native Front-end", value: "react native front-end", icon: "📱" },
   ];
 
   // Get unique categories from items and count projects
@@ -414,6 +417,18 @@ export const samplePortfolioItems: PortfolioItem[] = [
       "https://res.cloudinary.com/dlyyiq2yo/image/upload/v1756235114/WhatsApp_Image_2025-08-26_at_11.54.57_PM_qgisvb.jpg",
     link: "#",
     category: "Mobile App Designs",
+  },
+
+  // React Native Front-end
+  {
+    id: 10,
+    title: "React Native Chat App",
+    description:
+      "A cross-platform chat application built with React Native and Expo featuring real-time messaging and optimized performance.",
+    imageUrl:
+      "https://res.cloudinary.com/dshjm6hcx/image/upload/v1756912561/WhatsApp_Image_2025-09-03_at_6.27.21_PM_savcjk.jpg",
+    link: "#",
+    category: "React Native Front-end",
   },
 
  
